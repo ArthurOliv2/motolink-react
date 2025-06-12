@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate} from 'react-router-dom';
 import fundoHome from '../images/fundoHome.webp';
 
 function Cadastro() {
+    const navigate = useNavigate();
+
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const emailPreenchido = queryParams.get('email') || '';
@@ -22,6 +24,8 @@ function Cadastro() {
         console.log('Email:', email);
         console.log('Senha:', senha);
         console.log('Tipo de conta:', tipoConta);
+        
+        navigate('/dashboard');
     };
 
     return (
