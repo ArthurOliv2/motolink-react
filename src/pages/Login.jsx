@@ -11,9 +11,7 @@ function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Simulação de login
-        console.log('Email:', email);
-        console.log('Senha:', senha);
+        
         navigate('/dashboard');
     };
 
