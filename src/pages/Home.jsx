@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import fundoHome from '../images/fundoHome.webp' 
+import fundoHome from '../images/fundoHome.webp';
 
 function Home() {
     const [email, setEmail] = useState('');
@@ -38,7 +38,7 @@ function Home() {
                 }}
             ></div>
 
-            {/* Overlay escuro por cima da imagem */}
+            {/* Navbar sobre o fundo */}
             <nav
                 className="navbar navbar-expand-lg"
                 style={{
@@ -49,17 +49,16 @@ function Home() {
                     background: 'transparent',
                     zIndex: 3,
                     padding: '1rem 2rem'
-                }} 
+                }}
             >
                 <div className="container-fluid d-flex justify-content-between align-items-center">
-                    <span className="navbar-brand mb-0 h1"
-                    style={{ color: '#FFA500', fontWeight: 'bold'}}>
+                    <span className="navbar-brand mb-0 h1" style={{ color: '#FFA500', fontWeight: 'bold' }}>
                         MOTOLINK
                     </span>
                     <Link to="/login" className="btn btn-outline-warning fw-bold">
                         Login
                     </Link>
-                </div>       
+                </div>
             </nav>
 
             {/* Conteúdo centralizado */}
@@ -72,8 +71,12 @@ function Home() {
                     padding: '20px'
                 }}
             >
-                <h1 className="mb-3 display-4 fw-bold">Conectamos motoboys e estabelecimentos de forma rápida e organizada</h1>
-                <h3>Acabe com a bagunça do Whatsapp. Simplifique sua logistica com a plataforma Motolink</h3>
+                <h1 className="mb-3 display-4 fw-bold">
+                    Conectamos motoboys e estabelecimentos de forma rápida e organizada
+                </h1>
+                <h3>
+                    Acabe com a bagunça do Whatsapp. Simplifique sua logística com a plataforma Motolink
+                </h3>
                 <h5 className="mt-4 mb-3">
                     Pronto para começar? Digite seu e-mail para criar ou acessar sua conta.
                 </h5>
@@ -81,9 +84,7 @@ function Home() {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
-                        if (email.trim() !== '') {
-                            navigate(`/cadastro?email=${encodeURIComponent(email)}`);
-                        }
+                        handleStart();
                     }}
                     className="d-flex flex-column flex-md-row w-100"
                     style={{ maxWidth: '600px' }}
@@ -104,12 +105,7 @@ function Home() {
                         Começar agora
                     </button>
                 </form>
-
-                
             </div>
-
-            {/* Formulario semelhante ao da Netflix */}
-            
         </div>
     );
 }
