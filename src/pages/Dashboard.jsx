@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
     const navigate = useNavigate();
-    const [nome, setNome] = useState('');
-    const [tipoConta, setTipoConta] = useState('');
-
-    useEffect(() => {
-        const nomeSalvo = localStorage.getItem('nome');
-        const tipoSalvo = localStorage.getItem('tipoConta');
-        if (!nomeSalvo || !tipoSalvo) {
-            navigate('/');
-        } else {
-            setNome(nomeSalvo);
-            setTipoConta(tipoSalvo);
-        }
-    }, [navigate]);
 
     const handleLogout = () => {
-        localStorage.clear();
         navigate('/');
     };
 
@@ -38,8 +24,8 @@ function Dashboard() {
 
             {/* Boas-vindas */}
             <div className="container mt-5">
-                <h2 className="fw-bold">Olá, {nome}!</h2>
-                <p className="text-muted">Você está logado como <span className="text-warning">{tipoConta}</span>.</p>
+                <h2 className="fw-bold">Olá, Lucas!</h2>
+                <p className="text-muted">Você está logado como <span className="text-warning">motoboy</span>.</p>
 
                 {/* Cards de status */}
                 <div className="row mt-4">
@@ -71,7 +57,7 @@ function Dashboard() {
 
                 {/* Tabela simulada */}
                 <div className="mt-5">
-                    <h4>Lista de {tipoConta === 'motoboy' ? 'Entregas' : 'Pedidos'}</h4>
+                    <h4>Lista de Entregas</h4>
                     <div className="table-responsive">
                         <table className="table table-dark table-striped mt-3">
                             <thead>
