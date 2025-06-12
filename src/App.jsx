@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import Dashboard from './pages/dashboard';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
+import Dashboard from './pages/Dashboard';
 
 function App () {
     return (
