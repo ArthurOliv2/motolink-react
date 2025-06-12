@@ -24,8 +24,11 @@ function Cadastro() {
         console.log('Email:', email);
         console.log('Senha:', senha);
         console.log('Tipo de conta:', tipoConta);
-        
+
         navigate('/dashboard');
+
+        localStorage.setItem('nome', nome);
+        localStorage.setItem('tipoConta', tipoConta);
     };
 
     return (
